@@ -77,5 +77,18 @@ namespace ADONetDCD
             txtMarina_State.Text = row.state;
             txtMarina_Zip.Text = row.zip;            
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+
+            //Diplays non-modal form
+            form.Show();
+        }
     }
 }
