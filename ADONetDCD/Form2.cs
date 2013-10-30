@@ -27,7 +27,6 @@ namespace ADONetDCD
             txtMarina_City.Text = m1.city;
             txtMarina_State.Text = m1.state;
             txtMarina_Zip.Text = m1.zip;
-                        
         }
     }
 }
