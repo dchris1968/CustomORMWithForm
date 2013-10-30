@@ -9,7 +9,6 @@ namespace ADONetDCD
 {
     class MarinaDBConnector
     {
-        private string dbConnectionString;
         private SqlConnection dbSqlConnection;
         //private bool dbConnectionIsPersistent = true;
         

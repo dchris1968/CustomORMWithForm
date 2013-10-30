@@ -23,7 +23,7 @@ namespace ADONetDCD
             SqlConnection dbSqlConnection = new SqlConnection(Properties.Resources.DBConnectionString);
             dbSqlConnection.Open();
 
-            String sqlQueryString = "UPDATE marina SET marina_num = '" + this.id + "', name = '" + this.name + "', address ='" + this.address + "', city ='" + this.city + "', state = '" + this.state + "', zip ='" + this.zip + "' WHERE marina_num = '" + this.id + "';";
+            String sqlQueryString = "UPDATE marina SET name = '" + this.name + "', address ='" + this.address + "', city ='" + this.city + "', state = '" + this.state + "', zip ='" + this.zip + "' WHERE marina_num = '" + this.id + "';";
             SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
             int numRowsAffected = sqlCommand.ExecuteNonQuery();
 
