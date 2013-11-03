@@ -19,14 +19,51 @@ namespace ADONetDCD
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            Marina m1 = Marina.GetMarinaById(txtSelect.Text);
+            Marina row = Marina.GetMarinaById(txtSelect.Text);
 
-            txtMarina_Num.Text = m1.id;
-            txtMarina_Name.Text = m1.name;
-            txtMarina_Address.Text = m1.address;
-            txtMarina_City.Text = m1.city;
-            txtMarina_State.Text = m1.state;
-            txtMarina_Zip.Text = m1.zip;
+            txtMarina_Num.Text = row.id;
+            txtMarina_Name.Text = row.name;
+            txtMarina_Address.Text = row.address;
+            txtMarina_City.Text = row.city;
+            txtMarina_State.Text = row.state;
+            txtMarina_Zip.Text = row.zip;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Marina row = new Marina();
+
+            row.id = txtMarina_Num.Text;
+            row.name = txtMarina_Name.Text;
+            row.address = txtMarina_Address.Text;
+            row.city = txtMarina_City.Text;
+            row.state = txtMarina_State.Text;
+            row.zip = txtMarina_Zip.Text;
+
+            row.Update();
+            MessageBox.Show("Marina number " + txtMarina_Num.Text + " updated.");
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Marina.GetMarinaById(txtDelete.Text).Delete();
+            MessageBox.Show("Marina number " + txtDelete.Text + " deleted.");
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Marina row = new Marina();
+
+            row.id = txtMarina_Num.Text;
+            row.name = txtMarina_Name.Text;
+            row.address = txtMarina_Address.Text;
+            row.city = txtMarina_City.Text;
+            row.state = txtMarina_State.Text;
+            row.zip = txtMarina_Zip.Text;
+
+            row.Update();
+
+            MessageBox.Show("Marina number " + txtMarina_Num.Text + " added.");
         }
     }
 }
