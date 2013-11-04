@@ -128,6 +128,7 @@
             this.btnSelect.TabIndex = 53;
             this.btnSelect.Text = "Go";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnUpdate
             // 

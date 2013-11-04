@@ -18,18 +18,43 @@ namespace ADONetDCD
         public string state;
         public string zip;
 
+        
         public int Update()
         {
             SqlConnection dbSqlConnection = new SqlConnection(Properties.Resources.DBConnectionString);
             dbSqlConnection.Open();
+            //String sqlQueryStrings = "SELECT marina_num FROM marina;";
+            //SqlCommand sqlCommands = new SqlCommand(sqlQueryStrings, dbSqlConnection);
+            //SqlDataReader reader = sqlCommands.ExecuteReader();
+            //List<Marina> marinas = new List<Marina>();
 
-            String sqlQueryString = "UPDATE marina SET name = '" + this.name + "', address ='" + this.address + "', city ='" + this.city + "', state = '" + this.state + "', zip ='" + this.zip + "' WHERE marina_num = '" + this.id + "';";
-            SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
-            int numRowsAffected = sqlCommand.ExecuteNonQuery();
+            //while (reader.Read())
+            //{
+            //    Marina row = new Marina();
+            //    row.id = reader[0].ToString().Trim();
+            //}
+            //reader.Close();
 
-            dbSqlConnection.Close();
+            if (this.id == "")
+            {
+                String sqlQueryString = "INSERT INTO marina VALUES ('" + this.id + "', '" + this.name + "','" + this.address + "','" + this.city + "', '" + this.state + "', '" + this.zip + "' );";
+                SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
+                int numRowsAffected = sqlCommand.ExecuteNonQuery();
+                dbSqlConnection.Close();
 
-            return numRowsAffected;
+                return numRowsAffected;
+            }
+
+            else
+            {
+                String sqlQueryString = "UPDATE marina SET name = '" + this.name + "', address ='" + this.address + "', city ='" + this.city + "', state = '" + this.state + "', zip ='" + this.zip + "' WHERE marina_num = '" + this.id + "';";
+                SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
+                int numRowsAffected = sqlCommand.ExecuteNonQuery();
+                dbSqlConnection.Close();
+
+                return numRowsAffected;
+            }
+            
         }
 
         public int Delete()

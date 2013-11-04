@@ -16,19 +16,7 @@ namespace ADONetDCD
         {
             InitializeComponent();
         }
-
-        private void btnSelect_Click(object sender, EventArgs e)
-        {
-            Marina row = Marina.GetMarinaById(txtSelect.Text);
-
-            txtMarina_Num.Text = row.id;
-            txtMarina_Name.Text = row.name;
-            txtMarina_Address.Text = row.address;
-            txtMarina_City.Text = row.city;
-            txtMarina_State.Text = row.state;
-            txtMarina_Zip.Text = row.zip;
-        }
-
+                
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Marina row = new Marina();
@@ -64,6 +52,18 @@ namespace ADONetDCD
             row.Update();
 
             MessageBox.Show("Marina number " + txtMarina_Num.Text + " added.");
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            Marina row = Marina.GetMarinaById(txtSelect.Text);
+
+            txtMarina_Num.Text = row.id;
+            txtMarina_Name.Text = row.name;
+            txtMarina_Address.Text = row.address;
+            txtMarina_City.Text = row.city;
+            txtMarina_State.Text = row.state;
+            txtMarina_Zip.Text = row.zip;
         }
     }
 }
