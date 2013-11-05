@@ -23,38 +23,24 @@ namespace ADONetDCD
         {
             SqlConnection dbSqlConnection = new SqlConnection(Properties.Resources.DBConnectionString);
             dbSqlConnection.Open();
-            //String sqlQueryStrings = "SELECT marina_num FROM marina;";
-            //SqlCommand sqlCommands = new SqlCommand(sqlQueryStrings, dbSqlConnection);
-            //SqlDataReader reader = sqlCommands.ExecuteReader();
-            //List<Marina> marinas = new List<Marina>();
 
-            //while (reader.Read())
-            //{
-            //    Marina row = new Marina();
-            //    row.id = reader[0].ToString().Trim();
-            //}
-            //reader.Close();
+            String sqlQueryString;
 
-            if (this.id == "")
+            if (GetMarinaById(this.id).id == "")
             {
-                String sqlQueryString = "INSERT INTO marina VALUES ('" + this.id + "', '" + this.name + "','" + this.address + "','" + this.city + "', '" + this.state + "', '" + this.zip + "' );";
-                SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
-                int numRowsAffected = sqlCommand.ExecuteNonQuery();
-                dbSqlConnection.Close();
-
-                return numRowsAffected;
+                sqlQueryString = "INSERT INTO marina VALUES ('" + this.id + "', '" + this.name + "','" + this.address + "','" + this.city + "', '" + this.state + "', '" + this.zip + "' );";
             }
 
             else
             {
-                String sqlQueryString = "UPDATE marina SET name = '" + this.name + "', address ='" + this.address + "', city ='" + this.city + "', state = '" + this.state + "', zip ='" + this.zip + "' WHERE marina_num = '" + this.id + "';";
-                SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
-                int numRowsAffected = sqlCommand.ExecuteNonQuery();
-                dbSqlConnection.Close();
-
-                return numRowsAffected;
+                sqlQueryString = "UPDATE marina SET name = '" + this.name + "', address ='" + this.address + "', city ='" + this.city + "', state = '" + this.state + "', zip ='" + this.zip + "' WHERE marina_num = '" + this.id + "';";
+                
             }
-            
+            SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
+            int numRowsAffected = sqlCommand.ExecuteNonQuery();
+            dbSqlConnection.Close();
+
+            return numRowsAffected;
         }
 
         public int Delete()
@@ -72,8 +58,7 @@ namespace ADONetDCD
         }
 
         public static Marina GetMarinaById(string id)
-        {
-            //stub    
+        {  
             SqlConnection dbSqlConnection = new SqlConnection(Properties.Resources.DBConnectionString);
             dbSqlConnection.Open();
 
