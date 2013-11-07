@@ -16,9 +16,20 @@ namespace ADONetDCD
 
         public MarinaDBConnector(string dbConnectionString)
         {
-            //Open connection set it to dbSqlConnection
-            dbSqlConnection = new SqlConnection(dbConnectionString);
-            dbSqlConnection.Open();
+            try
+            {
+                //Open connection set it to dbSqlConnection
+                dbSqlConnection = new SqlConnection(dbConnectionString);
+                dbSqlConnection.Open();
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         ~MarinaDBConnector()

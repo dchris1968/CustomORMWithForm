@@ -19,45 +19,56 @@ namespace ADONetDCD
                 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Marina row = new Marina();
+            try
+            {
+                Marina row = new Marina();
+                row.id = txtMarina_Num.Text;
+                row.name = txtMarina_Name.Text;
+                row.address = txtMarina_Address.Text;
+                row.city = txtMarina_City.Text;
+                row.state = txtMarina_State.Text;
+                row.zip = txtMarina_Zip.Text;
 
-            row.id = txtMarina_Num.Text;
-            row.name = txtMarina_Name.Text;
-            row.address = txtMarina_Address.Text;
-            row.city = txtMarina_City.Text;
-            row.state = txtMarina_State.Text;
-            row.zip = txtMarina_Zip.Text;
-
-            row.Update();
-            MessageBox.Show("Marina number " + txtMarina_Num.Text + " updated.");
+                row.Update();
+                MessageBox.Show("Marina number " + txtMarina_Num.Text + " updated.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Please enter a valid ID number.", "Update Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Marina.GetMarinaById(txtDelete.Text).Delete();
-            MessageBox.Show("Marina number " + txtDelete.Text + " deleted.");
+            MessageBox.Show("Marina number " + txtDelete.Text + " deleted.");            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Marina row = new Marina();
+            try
+            {
+                Marina row = new Marina();
+                row.id = txtMarina_Num.Text;
+                row.name = txtMarina_Name.Text;
+                row.address = txtMarina_Address.Text;
+                row.city = txtMarina_City.Text;
+                row.state = txtMarina_State.Text;
+                row.zip = txtMarina_Zip.Text;
 
-            row.id = txtMarina_Num.Text;
-            row.name = txtMarina_Name.Text;
-            row.address = txtMarina_Address.Text;
-            row.city = txtMarina_City.Text;
-            row.state = txtMarina_State.Text;
-            row.zip = txtMarina_Zip.Text;
+                row.Update();
 
-            row.Update();
-
-            MessageBox.Show("Marina number " + txtMarina_Num.Text + " added.");
+                MessageBox.Show("Marina number " + txtMarina_Num.Text + " added.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Please enter a valid ID number.  Range of numbers is from 1 to 9999 only.", "New Record Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
-        {
+        {            
             Marina row = Marina.GetMarinaById(txtSelect.Text);
-
             txtMarina_Num.Text = row.id;
             txtMarina_Name.Text = row.name;
             txtMarina_Address.Text = row.address;

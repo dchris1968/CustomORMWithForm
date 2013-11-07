@@ -13,11 +13,23 @@ namespace ADONetDCD
 {
     public partial class Form1 : Form
     {
-        private MarinaDBConnector marinaTable = new MarinaDBConnector("Data Source=(local);Initial Catalog=ALEXAMARA;User Id=sa;Password=abc123;Integrated Security=false;");
         
+        MarinaDBConnector marinaTable;
+        
+       
+           
         public Form1()
         {
             InitializeComponent();
+            try
+            {
+                marinaTable = new MarinaDBConnector("Data Source=(local);Initial Catalog=ALEXAMARA;User Id=sa;Password=abc123;Integrated Security=false;");
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Database has bad connection - Closing program.");
+                this.Close();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

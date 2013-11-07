@@ -21,12 +21,13 @@ namespace ADONetDCD
         
         public int Update()
         {
+            
             SqlConnection dbSqlConnection = new SqlConnection(Properties.Resources.DBConnectionString);
             dbSqlConnection.Open();
 
             String sqlQueryString;
 
-            if (GetMarinaById(this.id).id == "")
+            if (GetMarinaById(this.id).id == null)
             {
                 sqlQueryString = "INSERT INTO marina VALUES ('" + this.id + "', '" + this.name + "','" + this.address + "','" + this.city + "', '" + this.state + "', '" + this.zip + "' );";
             }
@@ -34,13 +35,14 @@ namespace ADONetDCD
             else
             {
                 sqlQueryString = "UPDATE marina SET name = '" + this.name + "', address ='" + this.address + "', city ='" + this.city + "', state = '" + this.state + "', zip ='" + this.zip + "' WHERE marina_num = '" + this.id + "';";
-                
+
             }
+            
             SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
             int numRowsAffected = sqlCommand.ExecuteNonQuery();
             dbSqlConnection.Close();
-
             return numRowsAffected;
+
         }
 
         public int Delete()
@@ -66,16 +68,16 @@ namespace ADONetDCD
             SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
             SqlDataReader reader = sqlCommand.ExecuteReader();
             Marina row = new Marina();
-            
-            reader.Read();
 
-            row.id = reader[0].ToString().Trim();
-            row.name = reader[1].ToString().Trim();
-            row.address = reader[2].ToString().Trim();
-            row.city = reader[3].ToString().Trim();
-            row.state = reader[4].ToString().Trim();
-            row.zip = reader[5].ToString().Trim();
-
+            if (reader.Read())
+            {
+                row.id = reader[0].ToString().Trim();
+                row.name = reader[1].ToString().Trim();
+                row.address = reader[2].ToString().Trim();
+                row.city = reader[3].ToString().Trim();
+                row.state = reader[4].ToString().Trim();
+                row.zip = reader[5].ToString().Trim();
+            }
             reader.Close();
             dbSqlConnection.Close();
             return row;        
