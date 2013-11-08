@@ -51,12 +51,13 @@
             this.txtMarina_Address = new System.Windows.Forms.TextBox();
             this.txtMarina_Name = new System.Windows.Forms.TextBox();
             this.txtMarina_Num = new System.Windows.Forms.TextBox();
+            this.btnSelectAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(70, 326);
+            this.label10.Location = new System.Drawing.Point(35, 102);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 61;
@@ -64,7 +65,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(236, 323);
+            this.btnAdd.Location = new System.Drawing.Point(170, 98);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(68, 20);
             this.btnAdd.TabIndex = 60;
@@ -74,15 +75,15 @@
             // 
             // txtDelete
             // 
-            this.txtDelete.Location = new System.Drawing.Point(171, 351);
+            this.txtDelete.Location = new System.Drawing.Point(114, 72);
             this.txtDelete.Name = "txtDelete";
-            this.txtDelete.Size = new System.Drawing.Size(37, 20);
+            this.txtDelete.Size = new System.Drawing.Size(39, 20);
             this.txtDelete.TabIndex = 59;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(70, 354);
+            this.label9.Location = new System.Drawing.Point(23, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 58;
@@ -91,7 +92,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(130, 55);
+            this.label8.Location = new System.Drawing.Point(19, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 13);
             this.label8.TabIndex = 57;
@@ -100,7 +101,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(130, 28);
+            this.label7.Location = new System.Drawing.Point(31, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 56;
@@ -108,41 +109,41 @@
             // 
             // txtUpdate
             // 
-            this.txtUpdate.Location = new System.Drawing.Point(213, 52);
+            this.txtUpdate.Location = new System.Drawing.Point(114, 44);
             this.txtUpdate.Name = "txtUpdate";
             this.txtUpdate.Size = new System.Drawing.Size(39, 20);
             this.txtUpdate.TabIndex = 55;
             // 
             // txtSelect
             // 
-            this.txtSelect.Location = new System.Drawing.Point(213, 25);
+            this.txtSelect.Location = new System.Drawing.Point(114, 17);
             this.txtSelect.Name = "txtSelect";
             this.txtSelect.Size = new System.Drawing.Size(39, 20);
             this.txtSelect.TabIndex = 54;
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(269, 25);
+            this.btnSelect.Location = new System.Drawing.Point(170, 17);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(42, 20);
+            this.btnSelect.Size = new System.Drawing.Size(68, 20);
             this.btnSelect.TabIndex = 53;
-            this.btnSelect.Text = "Go";
+            this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(269, 51);
+            this.btnUpdate.Location = new System.Drawing.Point(170, 43);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(42, 21);
+            this.btnUpdate.Size = new System.Drawing.Size(68, 21);
             this.btnUpdate.TabIndex = 52;
-            this.btnUpdate.Text = "Go";
+            this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(236, 349);
+            this.btnDelete.Location = new System.Drawing.Point(170, 70);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(68, 22);
             this.btnDelete.TabIndex = 51;
@@ -153,7 +154,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 271);
+            this.label6.Location = new System.Drawing.Point(37, 296);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 50;
@@ -162,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 244);
+            this.label5.Location = new System.Drawing.Point(37, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 49;
@@ -171,7 +172,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 217);
+            this.label4.Location = new System.Drawing.Point(37, 242);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 48;
@@ -180,7 +181,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 190);
+            this.label3.Location = new System.Drawing.Point(37, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 47;
@@ -189,7 +190,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 163);
+            this.label2.Location = new System.Drawing.Point(37, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 46;
@@ -198,7 +199,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 136);
+            this.label1.Location = new System.Drawing.Point(37, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 45;
@@ -206,51 +207,62 @@
             // 
             // txtMarina_Zip
             // 
-            this.txtMarina_Zip.Location = new System.Drawing.Point(171, 271);
+            this.txtMarina_Zip.Location = new System.Drawing.Point(138, 296);
             this.txtMarina_Zip.Name = "txtMarina_Zip";
             this.txtMarina_Zip.Size = new System.Drawing.Size(100, 20);
             this.txtMarina_Zip.TabIndex = 44;
             // 
             // txtMarina_State
             // 
-            this.txtMarina_State.Location = new System.Drawing.Point(171, 244);
+            this.txtMarina_State.Location = new System.Drawing.Point(138, 269);
             this.txtMarina_State.Name = "txtMarina_State";
             this.txtMarina_State.Size = new System.Drawing.Size(100, 20);
             this.txtMarina_State.TabIndex = 43;
             // 
             // txtMarina_City
             // 
-            this.txtMarina_City.Location = new System.Drawing.Point(171, 217);
+            this.txtMarina_City.Location = new System.Drawing.Point(138, 242);
             this.txtMarina_City.Name = "txtMarina_City";
             this.txtMarina_City.Size = new System.Drawing.Size(100, 20);
             this.txtMarina_City.TabIndex = 42;
             // 
             // txtMarina_Address
             // 
-            this.txtMarina_Address.Location = new System.Drawing.Point(171, 190);
+            this.txtMarina_Address.Location = new System.Drawing.Point(138, 215);
             this.txtMarina_Address.Name = "txtMarina_Address";
             this.txtMarina_Address.Size = new System.Drawing.Size(100, 20);
             this.txtMarina_Address.TabIndex = 41;
             // 
             // txtMarina_Name
             // 
-            this.txtMarina_Name.Location = new System.Drawing.Point(171, 163);
+            this.txtMarina_Name.Location = new System.Drawing.Point(138, 188);
             this.txtMarina_Name.Name = "txtMarina_Name";
             this.txtMarina_Name.Size = new System.Drawing.Size(100, 20);
             this.txtMarina_Name.TabIndex = 40;
             // 
             // txtMarina_Num
             // 
-            this.txtMarina_Num.Location = new System.Drawing.Point(171, 136);
+            this.txtMarina_Num.Location = new System.Drawing.Point(138, 161);
             this.txtMarina_Num.Name = "txtMarina_Num";
             this.txtMarina_Num.Size = new System.Drawing.Size(100, 20);
             this.txtMarina_Num.TabIndex = 39;
+            // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Location = new System.Drawing.Point(170, 124);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(68, 20);
+            this.btnSelectAll.TabIndex = 62;
+            this.btnSelectAll.Text = "Select All";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 431);
+            this.ClientSize = new System.Drawing.Size(284, 352);
+            this.Controls.Add(this.btnSelectAll);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDelete);
@@ -275,7 +287,7 @@
             this.Controls.Add(this.txtMarina_Name);
             this.Controls.Add(this.txtMarina_Num);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Second Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,6 +318,7 @@
         private System.Windows.Forms.TextBox txtMarina_Address;
         private System.Windows.Forms.TextBox txtMarina_Name;
         private System.Windows.Forms.TextBox txtMarina_Num;
+        private System.Windows.Forms.Button btnSelectAll;
 
     }
 }

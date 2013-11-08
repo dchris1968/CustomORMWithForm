@@ -67,14 +67,40 @@ namespace ADONetDCD
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
-        {            
-            Marina row = Marina.GetMarinaById(txtSelect.Text);
-            txtMarina_Num.Text = row.id;
-            txtMarina_Name.Text = row.name;
-            txtMarina_Address.Text = row.address;
-            txtMarina_City.Text = row.city;
-            txtMarina_State.Text = row.state;
-            txtMarina_Zip.Text = row.zip;
+        {
+            try
+            {
+                Marina row = Marina.GetMarinaById(txtSelect.Text);
+
+                if (row.id != "")
+                {
+                    txtMarina_Num.Text = row.id;
+                    txtMarina_Name.Text = row.name;
+                    txtMarina_Address.Text = row.address;
+                    txtMarina_City.Text = row.city;
+                    txtMarina_State.Text = row.state;
+                    txtMarina_Zip.Text = row.zip;
+                }
+                else
+                {
+                    MessageBox.Show("Marina number does not exist.", "Marina Number Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Please enter a valid ID number", "Select Record Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            List<Marina> marinas = Marina.GetAllMarinas();
+
+            foreach (Marina row in marinas)
+            {
+                MessageBox.Show(row.id + " " + row.name + " " + row.address + " " + row.city + " " + row.state + " " + row.zip);
+            }
+
         }
     }
 }

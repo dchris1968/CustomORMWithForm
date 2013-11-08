@@ -27,7 +27,7 @@ namespace ADONetDCD
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Database has bad connection - Closing program.");
+                MessageBox.Show("Database has bad connection - Closing program.  ");
                 this.Close();
             }
         }
@@ -39,7 +39,7 @@ namespace ADONetDCD
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string myChoice = textBox3.Text;
+            string myChoice = txtDelete.Text;
             int numRowsAffected = marinaTable.Update(myChoice, txtMarina_Name.Text, txtMarina_Address.Text, txtMarina_City.Text, txtMarina_State.Text, txtMarina_Zip.Text);
             if (numRowsAffected == 1)
             {
@@ -53,7 +53,7 @@ namespace ADONetDCD
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string myChoice = textBox3.Text;
+            string myChoice = txtDelete.Text;
             int numRowsAffected = marinaTable.Delete(myChoice);
             if (numRowsAffected == 1)
             {
@@ -67,7 +67,7 @@ namespace ADONetDCD
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string myChoice = textBox2.Text;
+            string myChoice = txtUpdate.Text;
             int numRowsAffected = marinaTable.Update(myChoice, txtMarina_Num.Text, txtMarina_Name.Text, txtMarina_Address.Text, txtMarina_City.Text, txtMarina_State.Text, txtMarina_Zip.Text);
             if (numRowsAffected == 1)
             {
@@ -81,7 +81,7 @@ namespace ADONetDCD
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            MarinaDBRow row = marinaTable.Select(textBox1.Text);
+            MarinaDBRow row = marinaTable.Select(txtSelect.Text);
             txtMarina_Num.Text = row.id;
             txtMarina_Name.Text = row.name;
             txtMarina_Address.Text = row.address;
