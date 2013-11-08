@@ -72,7 +72,7 @@ namespace ADONetDCD
             {
                 Marina row = Marina.GetMarinaById(txtSelect.Text);
 
-                if (row.id != "")
+                if (row.id != null)
                 {
                     txtMarina_Num.Text = row.id;
                     txtMarina_Name.Text = row.name;
@@ -98,7 +98,8 @@ namespace ADONetDCD
 
             foreach (Marina row in marinas)
             {
-                MessageBox.Show(row.id + " " + row.name + " " + row.address + " " + row.city + " " + row.state + " " + row.zip);
+                MessageBox.Show(row.id + " " + row.name + " " + row.address + " " + row.city + " " + row.state + " " + row.zip,"GetAllMarinas Listings");
+                
             }
 
         }
